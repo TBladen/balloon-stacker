@@ -72,7 +72,7 @@ class BalloonStacker {
         } else {
           const targetTubeBalls = tube.querySelectorAll('.ball');
 
-          if (doesBackgroundColorMatch(selectedBall, targetTubeBalls[0]) && targetTubeBalls.length < 4) {
+          if (targetTubeBalls.length === 0 ||(doesBackgroundColorMatch(selectedBall, targetTubeBalls[0]) && targetTubeBalls.length < 4)) {
             // move ball
             selectedBall.parentNode.removeChild(selectedBall);
             tube.insertAdjacentElement('afterbegin', selectedBall);
